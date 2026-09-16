@@ -13,16 +13,14 @@ export default function NotePage() {
   if (!subject || !note) {
     return (
       <div className="note-content">
-        <p className="empty-state">
-          Note not found. Pick something from the sidebar.
-        </p>
+        <p>Note not found.</p>
       </div>
     );
   }
 
   return (
     <article className="note-content">
-      <div className="note-breadcrumb">
+      <div className="note-note">
         {subject.name} <span className="sep">/</span> {note.title}
       </div>
       <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>

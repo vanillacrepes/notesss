@@ -4,7 +4,7 @@ export default function Home() {
       <p>
         HI GUYS ENJOY GOOD LUCK SA EXAMSSSS
       </p>
-      <p className="empty-state">Go to the sidebar to start reading ^^</p>
+      <p>Go to the sidebar to start reading ^^</p>
     </div>
   );
 }

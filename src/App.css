@@ -124,7 +124,7 @@
   margin: 0 auto;
 }
 
-.note-breadcrumb {
+.note-note {
   color: var(--text-dim);
   font-size: 12px;
   margin-bottom: 24px;
@@ -132,7 +132,7 @@
   letter-spacing: 0.5px;
 }
 
-.note-breadcrumb .sep {
+.note-note .sep {
   margin: 0 6px;
   color: var(--border);
 }
