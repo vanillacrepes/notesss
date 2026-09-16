@@ -1,6 +1,9 @@
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { subjects } from "../data/subjects";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 
 export default function NotePage() {
   const { subjectSlug, noteSlug } = useParams();
@@ -22,7 +25,9 @@ export default function NotePage() {
       <div className="note-breadcrumb">
         {subject.name} <span className="sep">/</span> {note.title}
       </div>
-      <ReactMarkdown>{note.content}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
+        {note.content}
+      </ReactMarkdown>
     </article>
   );
 }

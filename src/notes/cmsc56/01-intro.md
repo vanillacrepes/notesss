@@ -62,26 +62,23 @@
 ## Syntax
 - T and F are valid propositions.
 - If P and Q are valid propositions, so are: ```~P, P∧Q, P∨Q, P→Q, P↔Q```
-- Order of operations (kung walang grouping symbols): ```~ → ∧ → ∨ → → → ↔```
+- Order of operations (kung walang grouping symbols): ```~ | ∧ | ∨ | -> | <->```
   - Same logic as PEMDAS, pwede tanggalin yung parentheses kung malinaw naman order.
-
-## Semantics
-- Truth value ng buong compound proposition = assign truth values sa variables tapos apply yung connective rules paisa-isa.
 
 ## Kinds of Propositional Statements
 - Tautology (valid sentence)
-  - Laging true, regardless of truth values ng variables.
+  - Always true
 - Contradiction (absurdity)
-  - Laging false, regardless of truth values ng variables.
+  - Always false
 - Contingency
-  - Depende sa truth values, minsan true minsan false.
+  - Minsan true minsan false. (mahusay)
 
-## Determining the Type (Truth Table Method)
-1. Label first n columns with the n component variables. Sunod na columns = combinations leading up to buong statement.
-2. List lahat ng 2ⁿ possible combinations ng truth values.
-3. Fill in truth values ng remaining columns hanggang sa buong statement.
+### Determining the Type (Truth Table Method)
+1. Label first n columns with the n component variables. Sunod na columns = combinations leading up to whole statement.
+2. List all ng $2^n$ possible combinations of truth values.
+3. Fill in truth values ng remaining columns.
 
-## Properties
+## Properties of Propositional Statements
 - Satisfiable
   - May at least one assignment of truth values na magiging true yung statement.
 - Equivalent

@@ -168,3 +168,15 @@
 .note-content li {
   margin-bottom: 4px;
 }
+
+/* ---------- Math (KaTeX) ---------- */
+.note-content .katex {
+  color: var(--text);
+  font-size: 1.05em;
+}
+
+.note-content .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 0;
+}
