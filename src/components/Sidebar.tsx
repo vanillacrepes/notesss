@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { subjects } from "../data/subjects";
 
-export default function Sidebar() {
+interface SidebarProps {
+  onNavigate?: () => void;
+}
+
+export default function Sidebar({ onNavigate }: SidebarProps) {
   return (
     <nav className="sidebar">
       <div className="sidebar-header">
@@ -16,6 +20,7 @@ export default function Sidebar() {
                 <li key={note.slug}>
                   <NavLink
                     to={`/${subject.slug}/${note.slug}`}
+                    onClick={onNavigate}
                     className={({ isActive }) =>
                       isActive ? "sidebar-link active" : "sidebar-link"
                     }
