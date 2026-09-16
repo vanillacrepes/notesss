@@ -1,0 +1,41 @@
+name: Sync notes from content repo
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # every hour, on the hour
+  workflow_dispatch:        # lets you trigger it manually from the Actions tab
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout app repo
+        uses: actions/checkout@v4
+
+      - name: Checkout content repo
+        uses: actions/checkout@v4
+        with:
+          repository: YOUR_GITHUB_USERNAME/notesss-content
+          path: _content-sync
+
+      - name: Sync into src/notes
+        run: |
+          rm -rf src/notes
+          mkdir -p src/notes
+          # copy everything except .git metadata
+          rsync -av --exclude='.git' _content-sync/ src/notes/
+          rm -rf _content-sync
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "notes-sync-bot"
+          git config user.email "actions@github.com"
+          git add src/notes
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Sync notes from content repo"
+            git push
+          fi
