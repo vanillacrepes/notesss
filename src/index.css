@@ -1,0 +1,30 @@
+:root {
+  --bg: #0d1117;
+  --bg-panel: #11151c;
+  --bg-hover: #1a2029;
+  --border: #23293399;
+  --text: #c9d1d9;
+  --text-dim: #6e7681;
+  --accent: #FFD1DC;
+  --accent-dim: #c9a0dc;
+  --link: #58a6ff;
+  --code-bg: #161b22;
+  --font-mono: "SF Mono", "Fira Code", "JetBrains Mono", "Consolas", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+}
