@@ -4,6 +4,8 @@ const noteModules = import.meta.glob("../notes/**/*.md", {
   eager: true,
 }) as Record<string, string>;
 
+console.log(noteModules)
+
 export interface Note {
   slug: string;
   title: string;
@@ -27,6 +29,8 @@ for (const notePath in noteModules) {
   const subjectSlug = parts[parts.length - 2];
   const fileName = parts[parts.length - 1].replace(/\.md$/, "");
   const raw = noteModules[notePath];
+
+  if (fileName === "glossary") continue;
 
   const titleMatch = raw.match(/^#\s+(.+)$/m);
   const title = titleMatch ? titleMatch[1].trim() : fileName;

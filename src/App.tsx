@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar";
 import NotePage from "./components/NotePage";
 import Home from "./components/Home";
 import "./App.css";
+import "./data/glossaries"
 
 function Shell() {
   const [sidebarOpen, setSidebarOpen] = useState(false);

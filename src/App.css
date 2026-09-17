@@ -1,3 +1,5 @@
+/* thank you claude I hate css */
+
 .app-shell {
   display: flex;
   height: 100vh;
@@ -43,22 +45,13 @@
   flex-direction: column;
 }
 
-/* ---------- Sidebar ---------- */
-.sidebar {
-  width: 280px;
-  flex-shrink: 0;
-  background: var(--bg-panel);
-  border-right: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-}
-
 .sidebar-header {
   padding: 18px 16px;
   font-weight: 700;
   color: var(--accent);
   border-bottom: 1px solid var(--border);
   letter-spacing: 0.5px;
+  text-decoration: none;
 }
 
 .sidebar-header .prompt {
@@ -212,7 +205,8 @@
   color: var(--text-dim);
 }
 
-.note-content ul, .note-content ol {
+.note-content ul,
+.note-content ol {
   color: var(--text);
   padding-left: 22px;
 }
@@ -289,4 +283,86 @@
   .ascii-banner {
     font-size: 8px;
   }
+}
+
+/* ---------- Glossary term trigger ---------- */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-trigger {
+  color: var(--accent);
+  border-bottom: 1px dotted var(--accent-dim);
+  cursor: help;
+}
+
+/* ---------- Tooltip popover ---------- */
+.tooltip-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 320px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  white-space: normal;
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 50;
+  transition: opacity 0.12s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.placement-above .tooltip-text {
+  bottom: calc(100% + 6px);
+}
+
+.placement-below .tooltip-text {
+  top: calc(100% + 6px);
+}
+
+.tooltip:hover .tooltip-text,
+.tooltip.open .tooltip-text {
+  opacity: 1;
+}
+
+/* Reuse note-content markdown styling inside tooltips, at a smaller scale */
+.tooltip-text table {
+  font-size: 11px;
+  border-collapse: collapse;
+  margin-top: 6px;
+}
+
+.tooltip-text th,
+.tooltip-text td {
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  text-align: center;
+}
+
+.tooltip-text th {
+  color: var(--accent);
+}
+
+.tooltip-text img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin-top: 6px;
+}
+
+.tooltip-text p:first-child {
+  margin-top: 0;
+}
+
+.tooltip-text p:last-child {
+  margin-bottom: 0;
 }

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { subjects } from "../data/subjects";
 
 interface SidebarProps {
@@ -8,9 +8,9 @@ interface SidebarProps {
 export default function Sidebar({ onNavigate }: SidebarProps) {
   return (
     <nav className="sidebar">
-      <div className="sidebar-header">
-        <span className="prompt">$</span> notesss
-      </div>
+      <Link to="/" className="sidebar-header" onClick={onNavigate}>
+        <span className="prompt">&lt;3</span> notes
+      </Link>
       <div className="sidebar-scroll">
         {subjects.map((subject) => (
           <div key={subject.slug} className="sidebar-group">
