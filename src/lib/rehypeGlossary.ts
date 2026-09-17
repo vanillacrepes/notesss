@@ -46,7 +46,6 @@ export function rehypeGlossary(glossary: Map<string, GlossaryEntry>) {
         }
 
         const term = matchedText.toLowerCase();
-        const entry = glossary.get(term);
 
         newNodes.push({
           type: "element",

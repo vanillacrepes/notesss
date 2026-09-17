@@ -33,6 +33,7 @@ export default function NotePage() {
         remarkPlugins={[remarkMath, remarkGfm]}
         rehypePlugins={[rehypeKatex, [rehypeGlossary, glossary]]}
         components={{
+          // @ts-expect-error -- :P
           "glossary-term": ({ node, children }: any) => {
             const term = node?.properties?.term as string;
             const entry = glossary.get(term);
