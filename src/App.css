@@ -190,6 +190,39 @@
   display: block;
   overflow-x: auto;
   max-width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.note-content thead {
+  display: table-header-group;
+}
+
+.note-content tbody {
+  display: table-row-group;
+}
+
+.note-content tr {
+  display: table-row;
+}
+
+.note-content th,
+.note-content td {
+  display: table-cell;
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  text-align: left;
+}
+
+.note-content th {
+  background: var(--bg-panel);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.note-content tr:nth-child(even) td {
+  background: var(--code-bg);
 }
 
 .note-content pre code {

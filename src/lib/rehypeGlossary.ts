@@ -1,4 +1,4 @@
-// src/lib/rehypeGlossary.ts
+// ty claude I aint reading all those docs
 import { visitParents } from "unist-util-visit-parents";
 import type { Root, Text, Element } from "hast";
 import type { GlossaryEntry } from "../data/glossaries";

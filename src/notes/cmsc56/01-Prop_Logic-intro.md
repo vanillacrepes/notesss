@@ -9,7 +9,6 @@
   - T: True
   - F: False
   - Propositions: Anything you want, but usually P, Q, R...
-  - Compound propositions: usually E, F, G, H...
 
 - Assumptions
   - Law of Excluded Middle
@@ -33,24 +32,24 @@
   - "either P or Q" / "at least one of P and Q"
   - ```P ∨ Q```
   - Rule: true iff **at least one** of P or Q is true.
-  - And na di maselan.
+  - **AND** na di maselan.
 
 - IF-THEN [->]
   - "if P then Q" / "P implies Q" / "Q if P"
-  - ```P → Q```
-  - In P → Q:
+  - ```P -> Q```
+  - In P -> Q:
     - P = premise
     - Q = conclusion
-  - Rule: P → Q is true iff P is false OR Q is true.
+  - Rule: P -> Q is true iff P is false OR Q is true.
     - Basta pag true ang P, true lang yung **term** pag true yung Q, pag false ang P laging true yan.
-  - Related forms (given P → Q):
-    - Inverse: ~P → ~Q
-    - Converse: Q → P
-    - Contrapositive: ~Q → ~P
+  - Related forms (given P -> Q):
+    - Inverse: ~P -> ~Q
+    - Converse: Q -> P
+    - Contrapositive: ~Q -> ~P
 
 - IF-AND-ONLY-IF [<->]
   - "P if and only if Q" / "if P then Q, and if Q then P"
-  - ```P ↔ Q```
+  - ```P <-> Q```
   - Rule: true iff P and Q have the **same** truth value (both T or both F).
 
 ## Literals vs Terms
