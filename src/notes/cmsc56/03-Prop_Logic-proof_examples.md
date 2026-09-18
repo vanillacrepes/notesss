@@ -36,4 +36,3 @@ Cons: $O(2^n)$ rows taena sige magsulat ka jan ng isang yellow pad na table
 ## Chain of Reasoning (Direct Proof)
 
 ## Proof by Contradiction (Indirect Proof)
-
