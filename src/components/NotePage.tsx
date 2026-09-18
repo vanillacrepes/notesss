@@ -7,6 +7,7 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { getGlossaryForPath } from "../data/glossaries";
 import { rehypeGlossary } from "../lib/rehypeGlossary";
+import rehypeRaw from 'rehype-raw';
 import Tooltip from "./Tooltip";
 
 export default function NotePage() {
@@ -31,7 +32,7 @@ export default function NotePage() {
       </div>
       <ReactMarkdown
         remarkPlugins={[remarkMath, remarkGfm]}
-        rehypePlugins={[rehypeKatex, [rehypeGlossary, glossary]]}
+        rehypePlugins={[rehypeRaw, rehypeKatex, [rehypeGlossary, glossary]]}
         components={{
           // @ts-expect-error -- :P
           "glossary-term": ({ node, children }: any) => {

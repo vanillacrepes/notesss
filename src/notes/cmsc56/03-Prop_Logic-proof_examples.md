@@ -27,7 +27,12 @@ Check for the row(s) where all premises are **true**. Is the conclusion also **t
 
 Here, rows 1, 5, 7 has **all** premises **true**, and have a **true** conclusion, so we can say the argument is **valid**. :D
 
-Cons: $O(2^n)$ rows.
+Pros: Super duper easy to use.
+
+Cons: $O(2^n)$ rows taena sige magsulat ka jan ng isang yellow pad na table
+
+## tatapusin po pag sinipag ako
+
 ## Chain of Reasoning (Direct Proof)
 
 ## Proof by Contradiction (Indirect Proof)
