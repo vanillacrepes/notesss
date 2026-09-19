@@ -1,4 +1,4 @@
-## Introduction to Computer Science
+# Introduction to Computer Science
 
 ### What is Compsci?
 - Computer science isn't just coding encoding, or game development.

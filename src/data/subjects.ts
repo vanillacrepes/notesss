@@ -4,7 +4,10 @@ const noteModules = import.meta.glob("../notes/**/*.md", {
   eager: true,
 }) as Record<string, string>;
 
-console.log(noteModules)
+const imageModules = import.meta.glob(
+  "../notes/**/*.{png,jpg,jpeg,gif,svg,webp}",
+  { eager: true, import: "default" }
+) as Record<string, string>;
 
 export interface Note {
   slug: string;
@@ -20,7 +23,33 @@ export interface Subject {
 
 const SUBJECT_NAMES: Record<string, string> = {
   cmsc56: "CMSC 56 | Discrete Mathematical Structures in Computer Science I",
+  cmsc12: "CMSC 12 | Foundations of Computer Science",
 };
+
+const imagesByFolder = new Map<string, Record<string, string>>();
+
+for (const imagePath in imageModules) {
+  const parts = imagePath.split("/");
+  const fileName = parts[parts.length - 1];
+  const folder = parts.slice(2, -1).join("/");
+
+  if (!imagesByFolder.has(folder)) imagesByFolder.set(folder, {});
+  imagesByFolder.get(folder)![fileName] = imageModules[imagePath];
+}
+
+function resolveImagePaths(raw: string, folder: string): string {
+  const folderImages = imagesByFolder.get(folder);
+  if (!folderImages) return raw;
+
+  return raw.replace(
+    /!\[([^\]]*)\]\(([^)\s]+)(\s+"[^"]*")?\)/g,
+    (match, alt, src, titlePart = "") => {
+      if (/^(https?:)?\/\//.test(src) || src.startsWith("/")) return match;
+      const resolved = folderImages[src];
+      return resolved ? `![${alt}](${resolved}${titlePart})` : match;
+    }
+  );
+}
 
 const subjectMap = new Map<string, Note[]>();
 
@@ -32,10 +61,12 @@ for (const notePath in noteModules) {
 
   if (fileName === "glossary") continue;
 
-  const titleMatch = raw.match(/^#\s+(.+)$/m);
+  const content = resolveImagePaths(raw, subjectSlug);
+
+  const titleMatch = content.match(/^#\s+(.+)$/m);
   const title = titleMatch ? titleMatch[1].trim() : fileName;
 
-  const note: Note = { slug: fileName, title, content: raw };
+  const note: Note = { slug: fileName, title, content };
 
   if (!subjectMap.has(subjectSlug)) subjectMap.set(subjectSlug, []);
   subjectMap.get(subjectSlug)!.push(note);
