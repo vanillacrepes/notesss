@@ -1,0 +1,1 @@
+**Algorithm**: A **finite** set of **instructions** that specify a sequence of operations to be carried out in order **to solve a problem**. (CMSC12 Reviewer, UPLB COSS)
