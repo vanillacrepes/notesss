@@ -4,6 +4,12 @@
 
 Basically, to **solve** a **problem**, we must use an **algorithm** or a set of **instructions**. **Finite** clarifies that you can't just have a set of instructions of **infinite** length, and **sequence** clarifies that the **operations** must be carried out **in order**.
 
+**Properties of Algorithms**
+1. **Finiteness**, meaning the algorithm must end after a finite number of operations.
+2. **Absence of Ambiguity**, instructions are clearly and strictly defined, ensuring deterministic behavior.
+3. **Defined Sequence**, Each step must have a **well-established structure** on terms of the **order of execution**.
+4. **Input-Output definition**, The input accepted and the output returned must be well defined.
+
 ___
 
 ## Algorithm Representation
@@ -94,7 +100,7 @@ In a **flowchart**, this is what **iteration** would look like.
 
 ![](Iteration_Flowchart_2.png)
 
-The condition will return to previous instructions to loop. Which is also why these are commonly referred to as loops.
+The **algorithm** will return to previous instructions and **loop**, only yielding control to the **false branch** when the **condition** is **no longer** satisfied. This is also why these are commonly referred to as loops.
 
 For example, to wash your hair:
 
