@@ -74,7 +74,7 @@ would be represented as:
 
 ![Flowchart](If_Flowchart_1.png)
 
-Conditions can be **nested** as well (formally defined as "a branch can have another selection" in 01.3). Take this example:
+Conditions can be **nested** as well (formally stated as **"a branch can have another selection"** in 01.3). Take this example:
 
 ```
 if sleepy:
@@ -107,7 +107,7 @@ For example, to wash your hair:
 ```
 wet_hair;
 
-while (hair_is_dirty)
+while (hair_is_dirty):
 	shampoo;
 	scrub;
 	rinse;
