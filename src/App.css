@@ -229,6 +229,8 @@
   background: none;
   padding: 0;
   color: #d1d5da;
+  tab-size: 2;
+  -moz-tab-size: 2;
 }
 
 .note-content blockquote {

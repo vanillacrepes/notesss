@@ -53,7 +53,7 @@ while condition:
 	- **Repeats** code **for each item** in a `sequence` or `iterable`, these are things such as `list`, `string`, or `range()`.
 	- The loop will stop once **all** items in the `iterable` have been passed.
 ```
-for item in [1,2,3,4]
+for item in [1,2,3,4]:
 	print(item)
 	
 '''
