@@ -1,7 +1,7 @@
 # Introduction to Computer Science
 
 ### What is Compsci?
-- Computer science isn't just coding encoding, or game development.
+- Computer science isn't just coding, encoding, or game development.
 - It's also a very wide field.
 
 To understand what **compsci** is, let's look at what **computing** is.

@@ -1,6 +1,6 @@
 # Conditional and Iterative Statements
 
-This note will cover implementation of **conditions** and **iterations** into Python.
+This note will cover implementation of **conditions** and **iterations** in Python.
 ## Conditional Statements
 
 A condition is a statement describing the **value** of a variable or the **relationship** between two or more variables.

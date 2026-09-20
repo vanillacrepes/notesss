@@ -52,6 +52,7 @@ These are constructs that allow for the manipulation of values. There are severa
 | Bitwise                 | `&` `\|` `^` `~` `<<` `>>`                                           | Perform operations on individual bits                |
 | Membership              | `in` `not in`                                                        | Test whether a value exists in a collection          |
 | Identity                | `is` `is not`                                                        | Test whether two references refer to the same object |
+
 Python also has a specific order in which arithmetic is performed. It goes as follows (top to bottom):
 - ()
 - **
@@ -111,8 +112,9 @@ This is converting a value into another type. Say considering a string to a numb
 **e.g.** 
 ```
 x = int("67")
-x = float("68")
-x string("69")
+y = float("68")
+x += y
+z = string("69")
 ```
 ## More on Python & Other Nitpicky Stuff
 
