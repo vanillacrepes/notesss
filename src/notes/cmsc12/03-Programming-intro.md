@@ -104,6 +104,16 @@ To get an input, you can use `input()`. This **function** will return a `string`
 user_in = input("type something: ")
 ```
 
+### Type Casting
+
+This is converting a value into another type. Say considering a string to a number, or vice versa. Because `x = "67"` will obviously make python store it as a string, but what if you wanted to add a number to it?
+
+**e.g.** 
+```
+x = int("67")
+x = float("68")
+x string("69")
+```
 ## More on Python & Other Nitpicky Stuff
 
 This is kept at the end because this is likely extraneous information to the course itself but was still included in the handout.
